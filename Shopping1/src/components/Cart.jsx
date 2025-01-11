@@ -1,18 +1,15 @@
-import { useContext, useEffect } from "react";
+import { useContext, useRef } from "react";
 import { ProductContext } from "../context/ProductData";
 
 const Cart = () => {
-  const { product, cart, setCount, setCart } = useContext(ProductContext);
-  const handleUpdateCart = (newCart) => {
-    setCart(newCart);
-  };
-  useEffect(() => {
-    handleUpdateCart(cart);
-  }, [cart]);
-  const HandlerDelete = (id) => {
-    const newCart = cart.filter((_, idx) => idx != id);
-    setCount((prev) => prev - 1);
-    handleUpdateCart(newCart);
+  const { product, cart, removeItemFromCart } = useContext(ProductContext);
+  // const [quantity, setQuantity] = useState();
+  const priceRef = useRef();
+
+  const HandlerQuantity = () => {
+    let temp = priceRef.current.textContent;
+    let price = temp * 2;
+    console.log(price);
   };
 
   return (
@@ -40,14 +37,23 @@ const Cart = () => {
                     {product[item].category}
                   </h1>
                   <div className="flex items-center justify-between">
-                    <h2 className="font-semibold">
-                      ${product[item].price}
-                      <span className="text-xs ml-2 line-through opacity-55">
-                        ${product[item].price}
-                      </span>
+                    <div
+                      onClick={HandlerQuantity}
+                      className="px-4 py-1 active:scale-95 text-white text-lg font-semibold cursor-pointer bg-zinc-600 rounded-full"
+                    >
+                      -
+                    </div>
+                    <h2 ref={priceRef} className="font-semibold">
+                      {product[item].price}
                     </h2>
                     <div
-                      onClick={() => HandlerDelete(idx)}
+                      onClick={HandlerQuantity}
+                      className="px-4 py-1 active:scale-95 text-white text-lg font-semibold cursor-pointer bg-zinc-600 rounded-full"
+                    >
+                      +
+                    </div>
+                    <div
+                      onClick={() => removeItemFromCart(idx)}
                       className="px-5 py-2 bg-red-400 rounded-md font-semibold text-white cursor-pointer active:scale-95 hover:bg-red-500"
                     >
                       Remove

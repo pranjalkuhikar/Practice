@@ -3,11 +3,7 @@ import { Link } from "react-router-dom";
 import { ProductContext } from "../context/ProductData";
 
 const Home = () => {
-  const { product, setCount, setCart, cart } = useContext(ProductContext);
-  const HandlerClick = (idx) => {
-    setCount((prev) => prev + 1);
-    setCart((prevcart) => [...prevcart, idx]);
-  };
+  const { product, cart, addToCart } = useContext(ProductContext);
 
   return (
     <>
@@ -46,7 +42,7 @@ const Home = () => {
                       </span>
                     </h2>
                     <div
-                      onClick={() => HandlerClick(idx)}
+                      onClick={() => addToCart(idx)}
                       className={`${
                         cart.includes(idx)
                           ? "cursor-not-allowed pointer-events-none bg-zinc-600"
