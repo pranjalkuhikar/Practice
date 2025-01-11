@@ -220,3 +220,220 @@
 //   sq = Math.floor(sq / 10);
 // }
 // console.log(sum === n);
+
+// n = 4;
+// if (n % 2 === 0) {
+//   console.log("Even number");
+// } else {
+//   console.log("Odd Number");
+// }
+
+// n = 11;
+// let count = 0;
+// for (let i = 1; i <= Math.sqrt(n); i++) {
+//   if (n % i === 0) {
+//     count++;
+//     if (n / i != i) {
+//       count++;
+//     }
+//   }
+// }
+// console.log(count === 2);
+
+// let year = 2016;
+// if (year % 4 === 0 && (year % 400 === 0 || year % 100 != 0)) {
+//   console.log("Leap Year");
+// } else {
+//   console.log("Not a Leap Year");
+// }
+
+// let n = 153;
+// let count = 0;
+// let temp = n;
+// let arm = n;
+// let sum = 0;
+// while (temp != 0) {
+//   count++;
+//   temp = Math.floor(temp / 10);
+// }
+// while (arm != 0) {
+//   let lastDigit = arm % 10;
+//   sum += lastDigit ** count;
+//   arm = Math.floor(arm / 10);
+// }
+// console.log(sum === n);
+
+// let n = 5;
+// let a = 0;
+// let b = 1;
+// for (let i = 0; i < n; i++) {
+//   console.log(a);
+//   let temp = b;
+//   b = a + b;
+//   a = temp;
+// }
+
+// let s = "level";
+// let isPalindrome = true;
+// for (let i = 0; i < s.length; i++) {
+//   if (s[i] != s[s.length - 1 - i]) {
+//     isPalindrome = false;
+//     break;
+//   }
+// }
+// console.log(isPalindrome);
+
+// let n = 5;
+// let fact = 1;
+// for (let i = 1; i <= n; i++) {
+//   fact *= i;
+// }
+// console.log(fact);
+
+// let n = 1234;
+// let sum = 0;
+// while (n != 0) {
+//   let lastDigit = n % 10;
+//   sum += lastDigit;
+//   n = Math.floor(n / 10);
+// }
+// console.log(sum);
+
+// let a = 10;
+// let b = 12;
+// let num1 = a;
+// let num2 = b;
+// while (b != 0) {
+//   let temp = b;
+//   b = a % b;
+//   a = temp;
+// }
+// console.log(a);
+
+// let lcm = (num1 * num2) / a;
+// console.log(lcm);
+
+// let s = "hello world";
+// let vowel = 0;
+// let consonants = 0;
+// let space = 0;
+// s = s.toLowerCase();
+// for (let i = 0; i < s.length; i++) {
+//   if (
+//     s[i] === "a" ||
+//     s[i] === "e" ||
+//     s[i] === "i" ||
+//     s[i] === "o" ||
+//     s[i] === "u"
+//   ) {
+//     vowel++;
+//   } else if (s[i] === " ") {
+//     space++;
+//   } else {
+//     consonants++;
+//   }
+// }
+// console.log(vowel, space, consonants);
+
+// let s = "programming";
+// let temp = "";
+// for (let i = 0; i < s.length; i++) {
+//   temp += s[s.length - 1 - i];
+// }
+// console.log(temp);
+
+// let arr = [4, 7, 1, 8, 5];
+// let max = arr[0];
+// let min = arr[0];
+// for (let i = 0; i < arr.length; i++) {
+//   if (arr[i] > max) {
+//     max = arr[i];
+//   }
+//   if (arr[i] < min) {
+//     min = arr[i];
+//   }
+// }
+// console.log(min, max);
+
+// let arr = [3, 1, 4, 1, 5, 9];
+// for (let i = 0; i < arr.length; i++) {
+//   for (let j = 0; j < arr.length; j++) {
+//     if (arr[j] > arr[j + 1]) {
+//       let temp = arr[j];
+//       arr[j] = arr[j + 1];
+//       arr[j + 1] = temp;
+//     }
+//   }
+// }
+// console.log(arr);
+
+// let arr = [1, 2, 3, 4, 5];
+// let sum = 0;
+// for (let i = 0; i < arr.length; i++) {
+//   sum += arr[i];
+// }
+// console.log(sum);
+
+// function Armstrong(n) {
+//   let count = 0;
+//   let temp = n;
+//   let arm = n;
+//   let sum = 0;
+//   while (temp != 0) {
+//     count++;
+//     temp = Math.floor(temp / 10);
+//   }
+//   while (arm != 0) {
+//     let lastDigit = arm % 10;
+//     sum += lastDigit ** count;
+//     arm = Math.floor(arm / 10);
+//   }
+//   return sum === n;
+// }
+// let start = 1;
+// let end = 500;
+// let arr = [];
+// for (let i = start; i < end; i++) {
+//   if (Armstrong(i)) {
+//     arr.push(i);
+//   }
+// }
+// console.log(arr);
+
+// let n = 4;
+// for (let i = 1; i <= 10; i++) {
+//   console.log(`${n}X${i}=${n * i}`);
+// }
+
+// function primeNumber(n) {
+//   let count = 0;
+//   for (let i = 1; i <= Math.sqrt(n); i++) {
+//     if (n % i === 0) {
+//       count++;
+//       if (n / i != i) {
+//         count++;
+//       }
+//     }
+//   }
+//   return count === 2;
+// }
+
+// let start = 10;
+// let end = 30;
+// let arr = [];
+// for (let i = start; i <= end; i++) {
+//   if (primeNumber(i)) {
+//     arr.push(i);
+//   }
+// }
+// console.log(arr);
+
+// let n = 28;
+// let temp = n;
+// let sum = 0;
+// for (let i = 0; i < n; i++) {
+//   if (n % i === 0) {
+//     sum += i;
+//   }
+// }
+// console.log(temp === sum);
