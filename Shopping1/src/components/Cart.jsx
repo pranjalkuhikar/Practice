@@ -1,15 +1,15 @@
-import { useContext, useRef } from "react";
+import { useContext, useRef, useState } from "react";
 import { ProductContext } from "../context/ProductData";
 
 const Cart = () => {
   const { product, cart, removeItemFromCart } = useContext(ProductContext);
-  // const [quantity, setQuantity] = useState();
+  const [quantity, setQuantity] = useState(0);
   const priceRef = useRef();
 
   const HandlerQuantity = () => {
     let temp = priceRef.current.textContent;
-    let price = temp * 2;
-    console.log(price);
+    console.log(temp);
+    setQuantity((temp) => temp * 2);
   };
 
   return (
@@ -65,6 +65,9 @@ const Cart = () => {
           ) : (
             <div className="text-center text-white">No Item Added</div>
           )}
+          <div className="mt-8 text-white">
+            <h2>Total: ${quantity}</h2>
+          </div>
         </div>
       </div>
     </>
