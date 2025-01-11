@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { ProductContext } from "../context/ProductData";
-import Navbar from "./Navbar";
 
 const Home = () => {
   const { product, setCount, setCart, cart } = useContext(ProductContext);
@@ -13,7 +12,6 @@ const Home = () => {
   return (
     <>
       <div className="flex flex-col min-h-screen bg-zinc-800">
-        <Navbar />
         <div>
           {product.length > 0 ? (
             <div className="w-full px-16 py-10 mt-10 flex justify-center flex-wrap gap-10 overflow-x-hidden overflow-y-auto mx-auto">
@@ -22,7 +20,7 @@ const Home = () => {
                   key={idx}
                   className="bg-white text-black rounded-lg h-96 w-72 p-4"
                 >
-                  <Link to={`/details/${idx}`}>
+                  <Link to={`/details/${item.id}`}>
                     <div className="h-[50%]">
                       <img
                         src={item.image}
@@ -49,7 +47,11 @@ const Home = () => {
                     </h2>
                     <div
                       onClick={() => HandlerClick(idx)}
-                      className="px-5 py-2 bg-yellow-400 rounded-md font-semibold text-white cursor-pointer active:scale-95 hover:bg-yellow-500"
+                      className={`${
+                        cart.includes(idx)
+                          ? "cursor-not-allowed pointer-events-none bg-zinc-600"
+                          : "bg-yellow-400 hover:bg-yellow-500 active:scale-95 cursor-pointer"
+                      } px-5 py-2 rounded-md font-semibold text-white`}
                     >
                       {cart.includes(idx) ? "Added" : "Add to Cart"}
                     </div>

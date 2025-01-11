@@ -39,7 +39,7 @@ const Navbar = () => {
     });
   }, []);
   return (
-    <div className="flex items-center justify-between gap-2 flex-wrap w-full text-white px-6 h-20">
+    <div className="flex items-center justify-between gap-2 flex-wrap w-full bg-zinc-800 text-white px-6 h-20">
       <Link to={"/"} className="font-[Forte] text-3xl">
         PranjalShop
       </Link>
@@ -59,10 +59,12 @@ const Navbar = () => {
             {result.map((item, idx) => (
               <Link
                 to={`/details/${item.id}`}
-                className="px-4 py-2 border-b last:border-b-0 cursor-pointer hover:bg-gray-100"
+                className="px-4 py-2 border-b last:border-b-0 cursor-pointer "
                 key={idx}
               >
-                <h1 className="font-medium">{item.title}</h1>
+                <h1 className="font-medium hover:bg-gray-300 py-3 px-5">
+                  {item.title}
+                </h1>
               </Link>
             ))}
           </div>
@@ -73,7 +75,7 @@ const Navbar = () => {
         className="text-xl bg-yellow-500 px-5 py-2 rounded-lg font-semibold flex items-center gap-5"
       >
         Cart
-        <span className="">
+        <span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"

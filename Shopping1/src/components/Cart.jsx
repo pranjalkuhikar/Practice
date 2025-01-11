@@ -1,25 +1,25 @@
-import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { useContext, useEffect } from "react";
 import { ProductContext } from "../context/ProductData";
 
 const Cart = () => {
-  const { product, cart, setCart } = useContext(ProductContext);
+  const { product, cart, setCount, setCart } = useContext(ProductContext);
+  const handleUpdateCart = (newCart) => {
+    setCart(newCart);
+  };
+  useEffect(() => {
+    handleUpdateCart(cart);
+  }, [cart]);
   const HandlerDelete = (id) => {
-    setCart(cart.filter((_, idx) => idx != id));
+    const newCart = cart.filter((_, idx) => idx != id);
+    setCount((prev) => prev - 1);
+    handleUpdateCart(newCart);
   };
 
   return (
     <>
-      <Link
-        to={"/"}
-        className=" absolute top-3 cursor-pointer left-3  px-5 py-2 bg-blue-600 text-white rounded-lg font-semibold"
-      >
-        Go Back
-      </Link>
-
       <div className="h-screen w-full bg-zinc-800">
         <div className="w-full px-16 py-10 flex flex-col items-center justify-center flex-wrap gap-10 overflow-x-hidden mx-auto">
-          {product &&
+          {cart.length > 0 ? (
             cart.map((item, idx) => (
               <div
                 key={idx}
@@ -47,7 +47,7 @@ const Cart = () => {
                       </span>
                     </h2>
                     <div
-                      onClick={HandlerDelete(idx)}
+                      onClick={() => HandlerDelete(idx)}
                       className="px-5 py-2 bg-red-400 rounded-md font-semibold text-white cursor-pointer active:scale-95 hover:bg-red-500"
                     >
                       Remove
@@ -55,7 +55,10 @@ const Cart = () => {
                   </div>
                 </div>
               </div>
-            ))}
+            ))
+          ) : (
+            <div className="text-center text-white">No Item Added</div>
+          )}
         </div>
       </div>
     </>

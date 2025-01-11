@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import { ProductContext } from "../context/ProductData";
 
 const Details = () => {
-  const { product, cart } = useContext(ProductContext);
+  const { product } = useContext(ProductContext);
   const { id } = useParams();
 
   return (
@@ -11,7 +11,7 @@ const Details = () => {
       <div className="flex items-center justify-center bg-zinc-800 h-screen">
         <Link
           to={"/"}
-          className=" absolute top-3 cursor-pointer left-3  px-5 py-2 bg-blue-600 text-white rounded-lg font-semibold"
+          className=" absolute top-20 cursor-pointer left-3  px-5 py-2 bg-blue-600 text-white rounded-lg font-semibold"
         >
           Go Back
         </Link>
@@ -19,31 +19,31 @@ const Details = () => {
           <div className="bg-white text-black flex justify-between gap-10 rounded-lg h-96 w-[40em] p-4">
             <div className="w-[40%]">
               <img
-                src={product[id].image}
+                src={product[id - 1].image}
                 alt=""
                 className="h-full w-full object-contain hover:scale-105"
               />
             </div>
             <div className=" w-[50%] flex flex-col gap-3 mt-2">
               <h1 className="text-3xl text-zinc-900 font-medium">
-                {product[id].title}
+                {product[id - 1].title}
               </h1>
               <h1 className="text-sm text-zinc-500 font-medium">
-                {product[id].category}
+                {product[id - 1].category}
               </h1>
               <h2 className="text-base text-zinc-600 line-clamp-4">
-                {product[id].description}
+                {product[id - 1].description}
               </h2>
-              <div className="flex product[id]s-center justify-between">
+              <div className="flex item-center justify-between mt-10">
                 <h2 className="font-semibold">
-                  ${product[id].price - 3}
+                  ${product[id - 1].price - 3}
                   <span className="text-xs ml-2 line-through opacity-55">
-                    {product[id].price}
+                    {product[id - 1].price}
                   </span>
                 </h2>
-                <div className="px-5 py-2 bg-yellow-400 rounded-md font-semibold text-white cursor-pointer active:scale-95 hover:bg-yellow-500">
-                  {cart.includes(product[id].id) ? "Added" : "Add to Cart"}
-                </div>
+                <h2 className="font-semibold px-5 py-2 rounded-full bg-zinc-400">
+                  {product[id - 1].rating.rate} ⭐
+                </h2>
               </div>
             </div>
           </div>
