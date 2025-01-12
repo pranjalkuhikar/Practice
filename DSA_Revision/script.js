@@ -418,15 +418,23 @@
 //   return count === 2;
 // }
 
-// let start = 10;
-// let end = 30;
+// let start = 1;
+// let end = 12;
 // let arr = [];
+// let sum = 0;
+// let sumC = 0;
 // for (let i = start; i <= end; i++) {
 //   if (primeNumber(i)) {
+//     sum += i;
 //     arr.push(i);
+//     if (end % i === 0) {
+//       sumC += i;
+//     }
 //   }
 // }
 // console.log(arr);
+// console.log(sum);
+// console.log(sumC);
 
 // let n = 28;
 // let temp = n;
@@ -554,3 +562,117 @@
 // let max = arr[arr.length - 1];
 // let actualNumber = Math.floor(max * (max + 1)) / 2;
 // console.log(actualNumber - sum);
+
+// let arr = [3, 1, 2, 4, 5];
+// arr.sort((a, b) => a - b);
+// console.log(arr[Math.floor(arr.length / 2)]);
+
+// let base = 2;
+// let exponent = 3;
+// let temp = 1;
+// for (let i = 0; i < exponent; i++) {
+//   temp *= base;
+// }
+// console.log(temp);
+
+// let n = 4;
+// let sum = 0;
+// for (let i = 1; i <= n; i++) {
+//   sum += i;
+// }
+// console.log(sum);
+
+// let n = 25;
+// let isPerfect = false;
+// for (let i = 0; i < n; i++) {
+//   if (i * i === n) {
+//     isPerfect = true;
+//     break;
+//   }
+// }
+// console.log(isPerfect);
+
+// let n = 123;
+// let sum = 0;
+// while (n != 0) {
+//   let lastDigit = n % 10;
+//   sum += lastDigit ** 2;
+//   n = Math.floor(n / 10);
+// }
+// console.log(sum);
+
+// let size = 3;
+// let arr = new Array(size);
+// for (let i = 0; i < arr.length; i++) {
+//   arr[i] = new Array(size);
+// }
+// let count = 1;
+// for (let i = 0; i < arr.length; i++) {
+//   for (let j = 0; j < arr[i].length; j++) {
+//     arr[i][j] = count++;
+//   }
+// }
+// for (let i = 0; i < arr.length; i++) {
+//   console.log(arr[i]);
+// }
+
+// function sumOfDigit(n) {
+//   let sum = 0;
+//   while (n != 0) {
+//     let lastDigit = n % 10;
+//     sum += lastDigit;
+//     n = Math.floor(n / 10);
+//   }
+//   return sum;
+// }
+
+// let n = 9875;
+// while (n > 10) {
+//   n = sumOfDigit(n);
+// }
+// console.log(n);
+
+// let n = 31232333;
+// let digit = 3;
+// let count = 0;
+// while (n != 0) {
+//   let lastDigit = n % 10;
+//   if (lastDigit === digit) {
+//     count++;
+//   }
+//   n = Math.floor(n / 10);
+// }
+// console.log(count);
+
+// function fib(n) {
+//   if (n === 0) return 0;
+//   if (n === 1) return 1;
+//   if (n > 2) return n;
+//   return fib(n - 1) + fib(n - 2);
+// }
+// let n = 5;
+// for (let i = 0; i <= n; i++) {
+//   console.log(fib(i));
+// }
+
+// let n = 12;
+// for (let i = 1; i <= n; i++) {
+//   if (n % i === 0) {
+//     console.log(i);
+//   }
+// }
+
+// let arr = [1, 2, 3, 4, 5];
+// let sum = 0;
+// for (let i = 0; i < arr.length; i++) {
+//   sum += arr[i];
+// }
+// let avg = sum / arr.length;
+// console.log(avg);
+
+// let s = "hello";
+// let count = 0;
+// for (let i = 0; i < s.length; i++) {
+//   count++;
+// }
+// console.log(count);
