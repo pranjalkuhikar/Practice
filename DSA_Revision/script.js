@@ -437,3 +437,120 @@
 //   }
 // }
 // console.log(temp === sum);
+
+// let arr = [3, 1, 4, 1, 5, 9];
+// for (let i = 0; i < arr.length; i++) {
+//   for (let j = 0; j < arr.length; j++) {
+//     if (arr[j] > arr[j + 1]) {
+//       let temp = arr[j];
+//       arr[j] = arr[j + 1];
+//       arr[j + 1] = temp;
+//     }
+//   }
+// }
+// console.log(arr);
+
+// let arr1 = [1, 5, 8, 9];
+// let arr2 = [2, 3, 4, 5, 6];
+// let arr = [];
+// let i = 0;
+// let j = 0;
+// let k = 0;
+// while (i < arr1.length && j < arr2.length) {
+//   if (arr1[i] < arr2[j]) {
+//     arr[k++] = arr1[i++];
+//   } else {
+//     arr[k++] = arr2[j++];
+//   }
+// }
+// while (i < arr1.length) {
+//   arr[k++] = arr1[i++];
+// }
+// while (j < arr2.length) {
+//   arr[k++] = arr2[j++];
+// }
+// console.log(arr);
+
+// let even = 0;
+// let odd = 0;
+// let start = 1;
+// let end = 10;
+// for (let i = start; i <= end; i++) {
+//   if (i % 2 === 0) {
+//     even += i;
+//   } else {
+//     odd += i;
+//   }
+// }
+// console.log(even);
+// console.log(odd);
+
+// let n = 5;
+// let a = 0;
+// let b = 1;
+// for (let i = 0; i < n; i++) {
+//   let temp = b;
+//   b = a + b;
+//   a = temp;
+// }
+// console.log(a);
+
+// function primeNumber(n) {
+//   let count = 0;
+//   for (let i = 1; i <= Math.sqrt(n); i++) {
+//     if (n % i === 0) {
+//       count++;
+//       if (n / i != i) {
+//         count++;
+//       }
+//     }
+//   }
+//   return count === 2;
+// }
+
+// let end = 20;
+// for (let i = 1; i <= end; i++) {
+//   if (primeNumber(i)) {
+//     console.log(i);
+//   }
+// }
+
+// n = 12345;
+// let count = 0;
+// while (n != 0) {
+//   count++;
+//   n = Math.floor(n / 10);
+// }
+// console.log(count);
+
+// let n = 3;
+// let count = 1;
+// for (let i = 0; i < n; i++) {
+//   for (let j = 0; j <= i; j++) {
+//     process.stdout.write(` ${count++}`);
+//   }
+//   console.log();
+// }
+
+// let n = 4;
+// let fact = 1;
+// let sum = 0;
+// for (let i = 1; i <= n; i++) {
+//   fact *= i;
+// }
+// console.log(fact);
+// while (fact != 0) {
+//   let lastDigit = fact % 10;
+//   sum += lastDigit;
+//   fact = Math.floor(fact / 10);
+// }
+// console.log(sum);
+
+// let arr = [1, 2, 4, 5];
+// let sum = 0;
+// for (let i = 0; i < arr.length; i++) {
+//   sum += arr[i];
+// }
+// let max = arr[arr.length - 1];
+// let actualNumber = Math.floor(max * (max + 1)) / 2;
+// console.log(actualNumber - sum);
