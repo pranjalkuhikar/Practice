@@ -65,3 +65,9 @@ img {
 .j {
   grid-area: j;
 }
+
+@media (max-width: 768px) {
+  .images {
+    grid-template-areas: "a" "b" "c" "d" "e" "f" "g" "h" "i" "j";
+  }
+}
